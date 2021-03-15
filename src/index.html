@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="Description"
+      content="Page to searching images from Pixabay API server"
+    />
     <title>GOIT-JS-HW-13</title>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -11,5 +15,23 @@
     />
   </head>
 
-  <body></body>
+  <body>
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images..."
+          class="search"
+        />
+      </form>
+
+      <ul class="gallery">
+        <!-- Список <li> с карточками изображений -->
+      </ul>
+
+      <div id="infinite-scroll"></div>
+    </div>
+  </body>
 </html>
