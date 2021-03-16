@@ -18,6 +18,7 @@ export default class PixabayApiService {
     return fetch(url, options)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         this.incrementPage();
         return data;
       });

@@ -56,17 +56,17 @@ function appendGalleryMarkup(data) {
 //========================= <INFINITE SCROLL> ==================================
 const options = {
   rootMargin: '150px',
-  threshold: 0,
+  threshold: 0.05,
 };
 
-const onEntry = (entries, observer) => {
+const onEntry = entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && pixabayApiService.query !== '') {
-      console.log(entry);
-      pixabayApiService.fetchArticles().then(data => {
-        appendGalleryMarkup(data);
-      });
+    if (!entry.isIntersecting || pixabayApiService.query === '') {
+      return;
     }
+    pixabayApiService.fetchArticles().then(data => {
+      appendGalleryMarkup(data);
+    });
   });
 };
 
